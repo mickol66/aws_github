@@ -1,0 +1,43 @@
+name: Deploy Portfolio to AWS S3 & CloudFront
+
+on:
+  push:
+    branches:
+      - main # Körs varje gång du pushar till din main-branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Checka ut koden från GitHub så att workflowet har tillgång till den
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    # 2. Logga in på AWS med hjälp av dina sparade Secrets
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.AWS_REGION }}
+
+    # 3. VALFRITT STEG: Om du använder React, Vue eller Next.js, avkommentera raderna nedan för att bygga projektet
+    # - name: Install Dependencies & Build
+    #   run: |
+    #     npm install
+    #     npm run build
+
+    # 4. Synkronisera filerna till S3. 
+    # Byt ut 'ditt-bucketnamn-har' mot ditt faktiska S3-bucketnamn.
+    # Om du har en build-process (steg 3), ändra '.' till din build-mapp (t.ex. 'dist' eller 'build')
+    - name: Deploy to S3
+      run: |
+        aws s3 sync . s3://mioldata.com --delete --exclude ".git*" --exclude ".github*"
+
+    # 5. Invalidera CloudFront Cache så att ändringarna syns direkt globalt.
+    # Byt ut 'DITT_DISTRIBUTION_ID' mot ditt faktiska CloudFront-id.
+    - name: Invalidate CloudFront Cache
+      run: |
+        aws cloudfront create-invalidation --distribution-id E2INWUDHZ1ACDB --paths "/*"
+
