@@ -248,14 +248,18 @@ window.addEventListener('DOMContentLoaded', () => {
     // Klistra in din exakta API-URL från din cdk deploy nedan:
     const apiURL = "https://pjvt7rgu21.execute-api.eu-north-1.amazonaws.com/prod/visit";
     fetch(apiURL, { method: 'POST' })
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById('counter').innerText = data.views;
-        })
-        .catch(error => console.error("Kunde inte uppdatera räknaren:", error));
+    .then(response => response.json())
+    .then(data => {
+        console.log("Svar från API:", data); // Detta skriver ut svaret i F12-konsolen så du kan se det
+
+        # Denna rad kollar om 'views' (litet v) eller 'Views' (stort V) eller 'Attributes' finns
+        const antalBesok = data.views || data.Views || (data.Attributes && data.Attributes.views) || "0";
+
+        document.getElementById('counter').innerText = antalBesok;
+    })
+    .catch(error => console.error("Kunde inte uppdatera räknaren:", error));
 });
 </script>
 
 </body>
 </html>
-
