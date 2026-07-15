@@ -208,6 +208,7 @@
 
     <footer>
         <div class="container">
+	    <p>Denna sida har visats <span id="counter">...</span> gånger.</p>
             <p>&copy; 2026 Mikael Olsson. All rights reserved.</p>
         </div>
     </footer>
@@ -242,6 +243,19 @@ document.getElementById('contact-form').addEventListener('submit', async (e) => 
     }
 });
 </script>
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+    // Klistra in din exakta API-URL från din cdk deploy nedan:
+    const apiURL = "https://pjvt7rgu21.execute-api.eu-north-1.amazonaws.com/prod/visit";
+    fetch(apiURL, { method: 'POST' })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('counter').innerText = data.views;
+        })
+        .catch(error => console.error("Kunde inte uppdatera räknaren:", error));
+});
+</script>
+
 </body>
 </html>
 
