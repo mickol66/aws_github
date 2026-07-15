@@ -250,12 +250,8 @@ window.addEventListener('DOMContentLoaded', () => {
     fetch(apiURL, { method: 'POST' })
     .then(response => response.json())
     .then(data => {
-        console.log("Svar från API:", data); // Detta skriver ut svaret i F12-konsolen så du kan se det
-
-       // # Denna rad kollar om 'views' (litet v) eller 'Views' (stort V) eller 'Attributes' finns
-        const antalBesok = data.views || data.Views || (data.Attributes && data.Attributes.views) || "0";
-
-        document.getElementById('counter').innerText = antalBesok;
+        // Nu läser vi direkt ut 'views' från det platta objektet
+        document.getElementById('counter').innerText = data.views;
     })
     .catch(error => console.error("Kunde inte uppdatera räknaren:", error));
 });
