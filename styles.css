@@ -280,24 +280,28 @@ section h2 {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* 1. Begränsa höjden på själva bildbehållaren och rensa eventuellt spill */
-.project-image {
-    height: 180px;          /* Ändra till önskad höjd (t.ex. mellan 150px och 200px) */
-    overflow: hidden;       /* Hindrar bilden från att spilla över till texten */
-    position: relative;     /* Säkerställer korrekt placering av behållaren */
+/* 1. Sätt en gemensam, fast och lägre höjd för ALLA bildbehållare */
+.project-image, 
+.placeholder-image {
+    height: 160px;          /* Ändra detta värde för att justera höjden (t.ex. 140px för ännu lägre) */
     width: 100%;
-    background-color: #f0f0f0; /* Valfritt: matchar den gråa placeholder-färgen */
+    overflow: hidden;       /* Klipp bort allt som hamnar utanför den nya lägre höjden */
+    position: relative;
+    display: flex;          /* Centrerar innehållet */
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4; /* Den ljusgrå färgen för dina placeholders */
 }
 
-/* 2. Se till att bilden håller sig strikt inom sin behållare */
+/* 2. Se till att själva diagrambilden anpassar sig efter den nya, lägre höjden */
 .project-image img {
     width: 100%;
     height: 100%;
-    object-fit: contain;    /* Använd 'contain' eftersom det är ett arkitekturdiagram, 
-                               då skalas hela diagrammet ner så att all text syns */
-    object-position: center;
+    object-fit: cover;      /* Fyller ut hela det nya, lägre området snyggt */
+    /* object-fit: contain; <-- ANVÄND DENNA om du märker att texten i diagrammet klipps bort och du vill se hela bilden i sin helhet */
     display: block;
 }
+
 
 /* 3. Säkerställ att textinnehållet under bilden flyttas ner korrekt */
 .project-content {
