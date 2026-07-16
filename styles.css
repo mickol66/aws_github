@@ -297,8 +297,8 @@ section h2 {
 .project-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;      /* Fyller ut hela det nya, lägre området snyggt */
-    /* object-fit: contain; <-- ANVÄND DENNA om du märker att texten i diagrammet klipps bort och du vill se hela bilden i sin helhet */
+   /* object-fit: cover;      /* Fyller ut hela det nya, lägre området snyggt */
+     object-fit: contain; <-- ANVÄND DENNA om du märker att texten i diagrammet klipps bort och du vill se hela bilden i sin helhet */
     display: block;
 }
 
