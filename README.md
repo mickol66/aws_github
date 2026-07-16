@@ -2,7 +2,7 @@
 
 Welcome to the frontend repository of my personal portfolio website. This project showcases a modern, secure, and fully automated static website architecture hosted entirely on AWS.
 
-Live Demo: [Insert your Route 53 domain link here, e.g., https://yourdomain.com]
+Live Demo: [https://mioldata.com]
 
 ## Architecture Overview
 This frontend is built using clean HTML5, CSS3, and JavaScript, designed to communicate dynamically with a serverless backend. 
