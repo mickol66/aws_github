@@ -280,14 +280,30 @@ section h2 {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* 1. Begränsa höjden på själva bildbehållaren och rensa eventuellt spill */
 .project-image {
-    height: 200px;
-    background-color: #e5e7eb;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 180px;          /* Ändra till önskad höjd (t.ex. mellan 150px och 200px) */
+    overflow: hidden;       /* Hindrar bilden från att spilla över till texten */
+    position: relative;     /* Säkerställer korrekt placering av behållaren */
+    width: 100%;
+    background-color: #f0f0f0; /* Valfritt: matchar den gråa placeholder-färgen */
 }
 
+/* 2. Se till att bilden håller sig strikt inom sin behållare */
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;    /* Använd 'contain' eftersom det är ett arkitekturdiagram, 
+                               då skalas hela diagrammet ner så att all text syns */
+    object-position: center;
+    display: block;
+}
+
+/* 3. Säkerställ att textinnehållet under bilden flyttas ner korrekt */
+.project-content {
+    padding: 20px;
+    background: #ffffff;
+}
 .placeholder-image {
     color: #9ca3af;
     font-weight: 500;
