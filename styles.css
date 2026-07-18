@@ -259,12 +259,14 @@ section h2 {
     background-color: #f9fafb;
 }
 
+/* 1. Här tvingar vi fram 3 kolumner på datorskärmar */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* Tvingar exakt 3 kort i bredd */
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .project-card {
@@ -273,6 +275,8 @@ section h2 {
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
@@ -280,41 +284,37 @@ section h2 {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* 1. Sätt en gemensam, fast och lägre höjd för ALLA bildbehållare */
+/* 2. Sätt en gemensam, fast och lägre höjd för ALLA bildbehållare */
 .project-image, 
 .placeholder-image {
-    height: 160px;          /* Ändra detta värde för att justera höjden (t.ex. 140px för ännu lägre) */
+    height: 160px;          
     width: 100%;
-    overflow: hidden;       /* Klipp bort allt som hamnar utanför den nya lägre höjden */
+    overflow: hidden;       
     position: relative;
-    display: flex;          /* Centrerar innehållet */
+    display: flex;          
     align-items: center;
     justify-content: center;
-    background-color: #f4f4f4; /* Den ljusgrå färgen för dina placeholders */
+    background-color: #f4f4f4; 
 }
 
-/* 2. Se till att själva diagrambilden anpassar sig efter den nya, lägre höjden */
+/* 3. Rensat upp den trasiga kommentaren här */
 .project-image img {
     width: 100%;
     height: 100%;
-   /* object-fit: cover;      /* Fyller ut hela det nya, lägre området snyggt */
-     object-fit: contain; <-- ANVÄND DENNA om du märker att texten i diagrammet klipps bort och du vill se hela bilden i sin helhet */
+    object-fit: contain; /* Visar hela din diagrambild utan att klippa kanterna */
     display: block;
 }
 
-
-/* 3. Säkerställ att textinnehållet under bilden flyttas ner korrekt */
-.project-content {
-    padding: 20px;
-    background: #ffffff;
-}
 .placeholder-image {
     color: #9ca3af;
     font-weight: 500;
 }
 
+/* 4. Sammanslagen och städad padding för textinnehållet */
 .project-content {
     padding: 25px;
+    background: #ffffff;
+    flex-grow: 1; /* Gör att korten blir lika höga även om textmängden varierar */
 }
 
 .project-content h3 {
@@ -334,6 +334,7 @@ section h2 {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    margin-top: auto; /* Trycker ner teknologitaggarna till botten av kortet */
 }
 
 .project-tech span {
@@ -344,6 +345,11 @@ section h2 {
     font-size: 0.8rem;
     font-weight: 500;
 }
+
+
+
+
+
 
 /* Contact Section */
 .contact-content {
