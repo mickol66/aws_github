@@ -257,6 +257,7 @@ section h2 {
 /* Projects Section */
 .projects {
     background-color: #f9fafb;
+    width: 100%;
 }
 
 /* 1. Här tvingar vi fram 3 kolumner på datorskärmar */
