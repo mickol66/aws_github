@@ -478,10 +478,3 @@ html {
 .project-card {
     animation: fadeInUp 0.6s ease-out;
 }
-
-.project-card-link {
-    text-decoration: none; /* Tar bort understrykning på texten */
-    color: inherit;        /* Gör att texten behåller sina ursprungliga färger */
-    display: block;        /* Säkerställer att hela ytan blir klickbar */
-}
-
