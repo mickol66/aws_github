@@ -25,4 +25,4 @@ The deployment of this website is 100% automated. Every `git push` to the `main`
 
 ## 🛠️ Looking for the Infrastructure?
 The entire backend ecosystem supporting this website was provisioned using **Infrastructure as Code (IaC)**. 
-👉 Check out the full CDK and Python repository here: [mickol66/portfolio-infra](https://github.com)
+👉 Check out the full CDK and Python repository here: [mickol66/portfolio-infra](https://github.com/mickol66/portfolio-infra)
