@@ -347,10 +347,11 @@ section h2 {
     font-weight: 500;
 }
 
-
-
-
-
+.project-card-link {
+    text-decoration: none; /* Tar bort understrykning på texten */
+    color: inherit;        /* Gör att texten behåller sina ursprungliga färger */
+    display: block;        /* Säkerställer att hela ytan blir klickbar */
+}
 
 /* Contact Section */
 .contact-content {
