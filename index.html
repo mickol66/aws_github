@@ -132,9 +132,10 @@
                         </div>
                         <div class="project-content">
                             <h3>AWS Enterprise Container Architecture with Python CDK & FastAPI</h3>
-                            <p>A highly secure, production-ready enterprise infrastructure deploying a Python FastAPI application inside an isolated Amazon ECS Fargate cluster. Built entirely as Infrastructure as Code (IaC) using AWS CDK, the design enforces strict network isolation by hosting containers in `PRIVATE_ISOLATED` subnets completely hidden from the public internet.
+                            <p>A secure, production-ready enterprise API built with Python FastAPI and deployed via AWS CDK. The infrastructure enforces strict network isolation by hosting Docker containers inside isolated private subnets completely hidden from the internet. 
 
-				By utilizing a public Application Load Balancer (ALB) for secure traffic ingress and swapping expensive NAT Gateways for private AWS VPC Endpoints (PrivateLink), the architecture achieves an optimized balance between security, data privacy, and cost-efficiency. The project also features a modern DevSecOps CI/CD pipeline built with GitHub Actions and OpenID Connect (OIDC) federation, enabling automated, "Zero-Trust" deployments free of long-lived, static AWS access keys [2.1].
+Traffic is routed securely through a public Application Load Balancer, while internal communication relies on cost-effective VPC Endpoints (PrivateLink) instead of expensive NAT Gateways. Features a modern GitHub Actions pipeline using OIDC for automated, zero-trust deployments [2.1].
+
 				</p>
                             <div class="project-tech">
                                 <span>ECS Fargate</span>
