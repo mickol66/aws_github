@@ -285,6 +285,13 @@ section h2 {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
+.project-card p {
+  height: 120px;       /* Justera så det matchar kort 1 */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Lägger till "..." automatiskt om texten är för lång */
+}
+
+
 /* 2. Sätt en gemensam, fast och lägre höjd för ALLA bildbehållare */
 .project-image, 
 .placeholder-image {
