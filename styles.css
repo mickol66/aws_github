@@ -336,6 +336,8 @@ section h2 {
     color: #6b7280;
     margin-bottom: 1.5rem;
     line-height: 1.6;
+    overflow: hidden;                /* Döljer resten av texten */
+    text-overflow: ellipsis;         /* Lägger till "..." i slutet */
 }
 
 .project-tech {
