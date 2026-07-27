@@ -260,6 +260,12 @@ section h2 {
     color: #1f2937;
     line-height: 1.3;
 }
+/* Denna regel tvingar AWS-märkena till en perfekt och diskret storlek */
+.cert-badge img {
+    width: 54px;         /* Justera till 60px om du vill ha dem ett uns större */
+    height: auto;        /* Behåller märkets proportioner perfekt */
+    flex-shrink: 0;      /* Hindrar webbläsaren från att klämma ihop bilden på mindre skärmar */
+}
 
 
 /* Experience Section */
