@@ -285,12 +285,6 @@ section h2 {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.project-card p {
-  height: 120px;       /* Justera så det matchar kort 1 */
-  overflow: hidden;
-  text-overflow: ellipsis; /* Lägger till "..." automatiskt om texten är för lång */
-}
-
 
 /* 2. Sätt en gemensam, fast och lägre höjd för ALLA bildbehållare */
 .project-image, 
@@ -332,21 +326,23 @@ section h2 {
     color: #1f2937;
 }
 
-.project-content p {
+/* Detta är det enda blocket du behöver för din projekt-brödtext: */
+.project-content p, .project-card p {
     color: #6b7280;
     margin-bottom: 1.5rem;
     line-height: 1.6;
     
-    /* Lägg till dessa rader för skottsäker multiline ellipsis: */
+    /* Multiline Ellipsis - Klipp stabilt efter 3 rader */
     display: -webkit-box;
-    -webkit-line-clamp: 4;           /* Klipp exakt efter 4 rader på alla kort */
+    -webkit-line-clamp: 3;           
     -webkit-box-orient: vertical;  
+    overflow: hidden;                /* Döljer allt under rad 3 */
+    text-overflow: ellipsis;         /* Garanterar att de tre prickarna ... ritas ut! */
     
-    overflow: hidden;                /* Döljer resten av texten */
-    text-overflow: ellipsis;         /* Lägger till "..." i slutet */
-    /* Lägg till denna rad för att dölja eventuella dolda rader under prickarna: */
-    max-height: 4.8em;               /* Låser höjden till exakt 3 rader (3 * 1.6) */   
+    /* Ta bort den gamla height: 120px och använd denna dynamiska maxhöjd istället: */
+    max-height: 4.8em;               /* 3 rader x 1.6 radavstånd = 4.8em */
 }
+
 
 
 .project-tech {
