@@ -345,7 +345,7 @@ section h2 {
     overflow: hidden;                /* Döljer resten av texten */
     text-overflow: ellipsis;         /* Lägger till "..." i slutet */
     /* Lägg till denna rad för att dölja eventuella dolda rader under prickarna: */
-    max-height: 4.8em;               /* 3 rader x 1.6 line-height = 4.8em */
+    max-height: 5.0em;               /* 3 rader x 1.6 line-height = 4.8em */
 }
 
 
