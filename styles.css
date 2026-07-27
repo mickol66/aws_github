@@ -336,9 +336,16 @@ section h2 {
     color: #6b7280;
     margin-bottom: 1.5rem;
     line-height: 1.6;
+    
+    /* Lägg till dessa rader för skottsäker multiline ellipsis: */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;           /* Klipp exakt efter 4 rader på alla kort */
+    -webkit-box-orient: vertical;  
+    
     overflow: hidden;                /* Döljer resten av texten */
     text-overflow: ellipsis;         /* Lägger till "..." i slutet */
 }
+
 
 .project-tech {
     display: flex;
