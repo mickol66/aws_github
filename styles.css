@@ -72,6 +72,15 @@ header {
     text-align: center;
 }
 
+/* Uppdatera din intro-text klass med dessa rader */
+.hero p, .intro-text {
+    max-width: 700px;        /* Hindrar texten från att sträcka ut sig för brett */
+    margin-left: auto;       /* Centrerar textboxen horisontellt */
+    margin-right: auto;      /* Centrerar textboxen horisontellt */
+    font-size: 1.1rem;       /* Ökar textstorleken en aning så den blir lättläst och tydlig */
+    line-height: 1.6;        /* Ger raderna ett luftigt och skönt avstånd */
+}
+
 .hero-content h1 {
     font-size: 3.5rem;
     font-weight: 700;
