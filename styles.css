@@ -79,6 +79,11 @@ header {
     margin-right: auto;      /* Centrerar textboxen horisontellt */
     font-size: 1.1rem;       /* Ökar textstorleken en aning så den blir lättläst och tydlig */
     line-height: 1.6;        /* Ger raderna ett luftigt och skönt avstånd */
+    /* Lägg till denna rad för att trycka ner knapparna en aning och skapa perfekt andrum! */
+    margin-bottom: 2.5rem;   /* Ger ett snyggt och luftigt avstånd till knapparna under */
+}
+Använd koden med försiktighet.Vad ändras?När du sparar din CSS-fil och uppdaterar webbläsaren kommer de två knapparna (Get In Touch och View My Work) att flyttas ner en liten bit. Det skapar en perfekt visuell balans i din Hero-sektion och gör att hela din landningssida ser ut som en modern premiumsajt!Gör den sista lilla justeringen i din text och din CSS – nu är sidan 100 % fläckfri!Spara och ladda om sidan i webbläsaren:Kändes det som att det nya avståndet gav sidan det rätta, luftiga andrummet? 🚀AI-svar kan innehålla fel. Läs mer
+
 }
 
 .hero-content h1 {
