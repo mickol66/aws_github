@@ -195,14 +195,28 @@ section h2 {
     justify-content: center;
 }
 
+/* Styling för alla kompetenstaggar */
 .skill-tag {
-    background-color: #2563eb;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 25px;
-    font-size: 0.9rem;
-    font-weight: 500;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0.25rem;
+    border-radius: 20px;
+    font-size: 0.88rem;
+    font-weight: 600;
 }
+
+/* Dina nya AWS/DevOps-taggar får din snygga, klara blåa färg */
+.skill-tag.cloud {
+    background-color: #2563eb; /* Klarblå */
+    color: #ffffff;
+}
+
+/* Dina historiska On-Prem-taggar får en mer diskret, professionell grå färg */
+.skill-tag.legacy {
+    background-color: #e5e7eb; /* Ljusgrå */
+    color: #4b5563;            /* Mörkgrå text */
+}
+
 
 /* Container som håller korten på en snygg rad */
 .certifications-container {
